@@ -11,11 +11,7 @@ body {
   padding: 0;
   margin: 0;
   font-family: "Playpen Sans", cursive;
-  overflow-y: hidden;
-}
-
-.overlay {
-  position: relative;
+  overflow-x: hidden;
 }
 
 .navbar {
@@ -85,6 +81,82 @@ body {
   height: 100vh;
   width: 100vw;
   background-color: rgba(0, 0, 0, 0.5);
+  animation-name: slide-out;
+  animation-duration: 2s;
+  animation-fill-mode: both;
+}
+
+.overlay.left {
+  animation-duration: 1s;
+  animation-name: slide-in;
+  animation-fill-mode: both;
+}
+
+/* these are slide in */
+
+.slide-in-1 {
+  animation: slide-in 1s linear both;
+}
+
+.slide-in-2 {
+  animation: slide-in 1.3s linear both;
+}
+
+.slide-in-3 {
+  animation: slide-in 1.5s linear both;
+}
+
+.slide-in-4 {
+  animation: slide-in 1.8s linear both;
+}
+
+.slide-in-5 {
+  animation: slide-in 2s linear both;
+}
+
+@keyframes slide-in {
+  100% {
+    right: 0%;
+  }
+
+  0% {
+    right: 100%;
+  }
+}
+
+/* these are slide out  */
+.slide-out-1 {
+  animation: slide-out 1s linear both;
+}
+
+.slide-out-2 {
+  animation: slide-out 1.3s linear both;
+}
+
+.slide-out-3 {
+  animation: slide-out 1.5s linear both;
+}
+
+.slide-out-4 {
+  animation: slide-out 1.8s linear both;
+}
+
+.slide-out-5 {
+  animation: slide-out 2s linear both;
+}
+
+@keyframes slide-out {
+  100% {
+    right: 100%;
+  }
+
+  0% {
+    right: 0%;
+  }
+}
+
+.home {
+  background-color: #423d3d;
 }
 
 .About {
@@ -103,17 +175,14 @@ body {
   background-color: var(--color-four);
 }
 
-/* animation btn */
-
 .navbtn {
   display: flex;
-  position: relative;
+  position: absolute;
+  z-index: 200;
   flex-direction: column;
   justify-content: space-evenly;
   text-align: end;
   align-items: end;
-  padding: 0;
-  margin: 0;
   right: 1rem;
   top: 1rem;
 }
@@ -123,7 +192,7 @@ body {
 .bar3 {
   width: 35px;
   height: 5px;
-  background-color: #423d3d;
+  background-color: #e90d0d;
   margin: 6px 0;
   transition: 0.4s;
 }
