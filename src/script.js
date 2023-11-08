@@ -1,3 +1,4 @@
+import "./style.css";
 //getting our elements :
 const overlay = document.getElementsByClassName("overlay")[0];
 const homeLi = document.getElementsByClassName("home")[0];
