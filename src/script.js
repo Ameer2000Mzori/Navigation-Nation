@@ -5,13 +5,15 @@ const aboutLi = document.getElementsByClassName("About")[0];
 const projectsLi = document.getElementsByClassName("Projects")[0];
 const SkillsLi = document.getElementsByClassName("Skills")[0];
 const contactLi = document.getElementsByClassName("Contact")[0];
+const body = document.querySelector("body");
+const container = document.getElementsByClassName("container")[0];
 
 //animation btn
-function myFunction(x) {
-  x.classList.toggle("change");
 
-  // our animation if :
+const navFunc = () => {
+  container.classList.toggle("change");
   if (!overlay.classList.contains("left")) {
+    body.classList.add("active");
     overlay.classList.add("left");
     homeLi.classList.add("slide-in-1");
     homeLi.classList.remove("slide-out-1");
@@ -24,6 +26,7 @@ function myFunction(x) {
     contactLi.classList.add("slide-in-5");
     contactLi.classList.remove("slide-out-5");
   } else {
+    body.classList.remove("active");
     overlay.classList.remove("left");
     homeLi.classList.add("slide-out-1");
     homeLi.classList.remove("slide-in-1");
@@ -36,4 +39,16 @@ function myFunction(x) {
     contactLi.classList.add("slide-out-5");
     contactLi.classList.remove("slide-in-5");
   }
-}
+};
+
+// click event of navbar
+
+container.addEventListener("click", navFunc);
+
+// click events of elements
+
+homeLi.addEventListener("click", navFunc);
+aboutLi.addEventListener("click", navFunc);
+projectsLi.addEventListener("click", navFunc);
+SkillsLi.addEventListener("click", navFunc);
+contactLi.addEventListener("click", navFunc);
