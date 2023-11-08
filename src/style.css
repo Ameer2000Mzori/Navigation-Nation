@@ -1,4 +1,145 @@
+@import url("https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@400;500;600;700;800&display=swap");
+
+:root {
+  --color-one: rgb(205, 184, 63);
+  --color-two: rgb(96, 205, 63);
+  --color-three: rgb(63, 153, 205);
+  --color-four: rgb(205, 184, 63);
+}
+
 body {
   padding: 0;
   margin: 0;
+  font-family: "Playpen Sans", cursive;
+  overflow-y: hidden;
+}
+
+.overlay {
+  position: relative;
+}
+
+.navbar {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.navlinks {
+  display: flex;
+  width: 100%;
+}
+
+.navlinks ul {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  list-style: none;
+}
+
+.navlinks ul li {
+  width: 100%;
+  height: 20vh;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.navlinks ul li a {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  justify-content: space-evenly;
+  text-align: center;
+  align-items: center;
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+  font-size: 150%;
+}
+
+.navlinks ul li a::before {
+  content: "";
+  width: 25vw;
+  height: 3px;
+  background-color: white;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  opacity: 0;
+}
+
+.navlinks ul li a:hover::before {
+  opacity: 1;
+}
+
+.overlay {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.About {
+  background-color: var(--color-one);
+}
+
+.Projects {
+  background-color: var(--color-two);
+}
+
+.Skills {
+  background-color: var(--color-three);
+}
+
+.Contact {
+  background-color: var(--color-four);
+}
+
+/* animation btn */
+
+.navbtn {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: space-evenly;
+  text-align: end;
+  align-items: end;
+  padding: 0;
+  margin: 0;
+  right: 1rem;
+  top: 1rem;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+  width: 35px;
+  height: 5px;
+  background-color: #423d3d;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+.change .bar1 {
+  transform: translate(0, 11px) rotate(-45deg);
+}
+
+.change .bar2 {
+  opacity: 0;
+}
+
+.change .bar3 {
+  transform: translate(0, -11px) rotate(45deg);
+}
+
+.container:hover {
+  cursor: pointer;
 }
